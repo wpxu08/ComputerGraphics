@@ -10,9 +10,12 @@ using namespace Gdiplus;
 VOID OnPaint(HDC hdc)
 {
     Graphics graphics(hdc);
-    Pen      pen(Color(255, 0, 0, 255));
-    SetPixel(hdc, 90, 90, (255, 0, 0));
+    Pen      pen(Color(255, 0, 0, 0));
+    SetPixel(hdc, 90, 90, RGB(255, 0, 0));
+    SetPixel(hdc, 150, 90, RGB(0, 255, 0));
+    SetPixel(hdc, 210, 90, RGB(0, 0, 255));
     graphics.DrawLine(&pen, 0, 0, 200, 100);
+    graphics.DrawLine(&pen, 200, 100, 400, 400);
 }
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
